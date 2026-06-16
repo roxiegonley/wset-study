@@ -3,158 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riesling — WSET Level 2 Study Card</title>
+<title>WSET Level 2 — Study Cards</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#EDEFE2;
-    --paper:#FBFCF5;
-    --ink:#22271D;
-    --ink-soft:#5A604C;
-    --gold:#B68A26;
-    --lime:#6F8E2A;
-    --wine:#6A2E40;
-    --line:#D6D9C4;
-    --correct:#4B7A3F;
-    --wrong:#9A3B2E;
+    --bg:#EDEFE2; --paper:#FBFCF5; --ink:#22271D; --ink-soft:#5A604C;
+    --gold:#B68A26; --lime:#6F8E2A; --wine:#6A2E40; --line:#D6D9C4;
+    --correct:#4B7A3F; --wrong:#9A3B2E;
     --shadow:0 1px 2px rgba(34,39,29,.06),0 8px 24px rgba(34,39,29,.06);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Hanken Grotesk',system-ui,sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    padding-bottom:64px;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:60px}
   .wrap{max-width:640px;margin:0 auto;padding:0 18px}
+  b{font-weight:700}
+  .hidden{display:none!important}
 
-  /* Header */
-  header{padding:34px 0 18px;position:relative}
-  .eyebrow{
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--gold);font-weight:700;margin-bottom:10px;
-  }
-  h1{
-    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(52px,16vw,84px);
-    line-height:.9;letter-spacing:-.02em;
-  }
-  h1 .dot{color:var(--lime)}
-  .essence{
-    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
-    font-size:clamp(17px,4.6vw,21px);color:var(--ink-soft);
-    margin-top:14px;max-width:30ch;
-  }
+  /* HOME */
+  .home-head{padding:36px 0 6px}
+  .home-head .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+  .home-head h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,11vw,60px);line-height:.95;letter-spacing:-.02em}
+  .home-head p{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);margin-top:12px;font-size:17px}
+  .sec-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .ch-card{display:flex;align-items:center;gap:15px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s,border-color .12s;text-align:left;width:100%;font:inherit;color:inherit}
+  .ch-card:hover{transform:translateY(-1px);border-color:var(--gold)}
+  .ch-num{flex:0 0 46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:#fff}
+  .ch-meta h2{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.15}
+  .ch-meta .ess{font-size:13px;color:var(--ink-soft);margin-top:3px}
+  .arrow{margin-left:auto;color:var(--ink-soft);font-size:20px}
 
-  /* Quick facts */
-  .facts{
-    display:grid;grid-template-columns:1fr 1fr;gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:14px;
-    overflow:hidden;margin:22px 0 6px;
-  }
-  .fact{background:var(--paper);padding:13px 15px}
-  .fact .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
-  .fact .v{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-top:3px}
+  /* CHAPTER HEADER */
+  .topbar{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+  .back{display:inline-flex;align-items:center;gap:7px;background:none;border:none;font:inherit;color:var(--ink-soft);font-weight:600;font-size:14px;padding:12px 0;cursor:pointer}
+  .back:hover{color:var(--ink)}
+  header.ch{padding:8px 0 16px}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:9px}
+  header.ch h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,11vw,62px);line-height:.92;letter-spacing:-.02em}
+  header.ch .essence{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(16px,4.4vw,20px);color:var(--ink-soft);margin-top:13px;max-width:34ch}
 
-  /* Sticky nav */
-  nav{
-    position:sticky;top:0;z-index:20;background:var(--bg);
-    padding:10px 0;border-bottom:1px solid var(--line);
-    margin-bottom:6px;
-  }
-  .pills{display:flex;gap:7px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;padding:0 18px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:20px 0 4px}
+  .fact{background:var(--paper);padding:12px 14px}
+  .fact .k{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .fact .v{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-top:2px}
+
+  nav.pills-bar{position:sticky;top:42px;z-index:25;background:var(--bg);padding:9px 0;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .pills{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:0 18px}
   .pills::-webkit-scrollbar{display:none}
-  .pill{
-    flex:0 0 auto;border:1px solid var(--line);background:var(--paper);
-    color:var(--ink-soft);font-size:13px;font-weight:600;
-    padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
-    transition:all .15s;
-  }
+  .pill{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .15s}
   .pill:hover{border-color:var(--gold);color:var(--ink)}
 
-  /* Sections */
-  section{padding:26px 0 6px;scroll-margin-top:58px}
-  .s-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
-  .s-num{font-family:'Fraunces',serif;font-style:italic;color:var(--gold);font-size:15px;font-weight:500}
-  h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;letter-spacing:-.01em}
+  section{padding:24px 0 4px;scroll-margin-top:92px}
+  .s-head{display:flex;align-items:baseline;gap:10px;margin-bottom:13px}
+  .s-num{font-family:'Fraunces',serif;font-style:italic;color:var(--gold);font-size:14px;font-weight:500}
+  h2.s{font-family:'Fraunces',serif;font-weight:600;font-size:23px;letter-spacing:-.01em}
+  .subhead{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--wine);margin:30px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  .subhead .s-sub{display:block;font-family:'Hanken Grotesk';font-style:normal;font-size:13px;color:var(--ink-soft);font-weight:500;margin-top:3px}
+  .intro-line{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px}
 
   .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 17px;box-shadow:var(--shadow)}
   .card + .card{margin-top:10px}
-
   ul.facts-list{list-style:none}
   ul.facts-list li{position:relative;padding:6px 0 6px 20px;border-bottom:1px solid var(--line);font-size:15px}
   ul.facts-list li:last-child{border-bottom:none}
   ul.facts-list li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--lime)}
-  b{font-weight:700}
 
-  /* Ripeness spectrum */
+  .gfacts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:4px}
+  .gfacts .fact{padding:10px 13px}
+
+  /* spectrum */
   .spectrum{display:flex;flex-direction:column;gap:8px}
   .stage{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper)}
   .stage-bar{display:flex;align-items:center;gap:11px;padding:13px 15px;cursor:pointer}
-  .swatch{width:16px;height:16px;border-radius:50%;flex:0 0 auto}
+  .swatch{width:15px;height:15px;border-radius:50%;flex:0 0 auto}
   .stage-bar .lbl{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
-  .stage-bar .sub{font-size:12px;color:var(--ink-soft);margin-left:auto}
+  .stage-bar .sub{font-size:12px;color:var(--ink-soft);margin-left:auto;text-align:right}
   .stage-body{max-height:0;overflow:hidden;transition:max-height .28s ease}
   .stage-body div{padding:0 15px 14px;font-size:14.5px;color:var(--ink-soft)}
-  .stage.open .stage-body{max-height:180px}
-  .chev{margin-left:6px;transition:transform .25s;color:var(--ink-soft)}
+  .stage.open .stage-body{max-height:240px}
+  .chev{margin-left:8px;transition:transform .25s;color:var(--ink-soft)}
   .stage.open .chev{transform:rotate(180deg)}
 
-  /* Region cards */
+  /* regions */
   .region{margin-bottom:10px}
   .region .top{display:flex;align-items:center;gap:10px;cursor:pointer}
-  .flag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:var(--wine);padding:3px 8px;border-radius:6px}
-  .region h3{font-family:'Fraunces',serif;font-size:18px;font-weight:600}
+  .flag{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);background:var(--wine);padding:3px 8px;border-radius:6px;white-space:nowrap}
+  .region h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600}
   .region .meta{margin-top:11px;display:none}
   .region.open .meta{display:block}
   .mrow{display:flex;gap:9px;padding:5px 0;font-size:14px;border-top:1px dashed var(--line)}
-  .mrow .mk{flex:0 0 78px;color:var(--gold);font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+  .mrow .mk{flex:0 0 70px;color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding-top:2px}
 
-  /* Flashcards */
+  /* flashcards */
   .grid2{display:grid;grid-template-columns:1fr;gap:10px}
-  .flash{perspective:1000px;cursor:pointer;min-height:78px}
-  .flash-in{position:relative;width:100%;height:100%;min-height:78px;transition:transform .5s;transform-style:preserve-3d}
+  .flash{perspective:1000px;cursor:pointer;min-height:80px}
+  .flash-in{position:relative;width:100%;min-height:80px;transition:transform .5s;transform-style:preserve-3d}
   .flash.flip .flash-in{transform:rotateY(180deg)}
   .flash-face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:13px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;background:var(--paper);box-shadow:var(--shadow)}
-  .flash-front .term{font-family:'Fraunces',serif;font-weight:600;font-size:18px}
-  .flash-front .hint{font-size:11px;color:var(--ink-soft);margin-top:4px;letter-spacing:.05em}
+  .flash-front .term{font-family:'Fraunces',serif;font-weight:600;font-size:17px}
+  .flash-front .hint{font-size:11px;color:var(--ink-soft);margin-top:4px;letter-spacing:.04em}
   .flash-back{transform:rotateY(180deg);background:#23271D;color:#EDEFE2;border-color:#23271D}
-  .flash-back .def{font-size:14.5px}
+  .flash-back .def{font-size:14px}
 
-  /* Prädikat ladder */
-  .ladder{position:relative;margin-top:6px}
+  /* ladder */
   .axis{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:right;margin-bottom:8px}
   .rung{border:1px solid var(--line);border-radius:12px;margin-bottom:7px;overflow:hidden;cursor:pointer;background:var(--paper)}
   .rung-bar{display:flex;align-items:center;gap:12px;padding:12px 15px}
   .level{width:26px;height:26px;border-radius:7px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:13px;color:#fff}
-  .rung .name{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
+  .rung .name{font-family:'Fraunces',serif;font-weight:600;font-size:15px}
   .rung .gloss{font-size:12px;color:var(--ink-soft);margin-left:auto;text-align:right;max-width:42%}
   .rung-body{max-height:0;overflow:hidden;transition:max-height .28s}
   .rung-body div{padding:0 15px 13px 53px;font-size:14px;color:var(--ink-soft)}
-  .rung.open .rung-body{max-height:170px}
-  .ladder-note{font-size:13px;color:var(--wine);margin-top:10px;font-weight:600;padding-left:2px}
+  .rung.open .rung-body{max-height:200px}
+  .ladder-note{font-size:13px;color:var(--wine);margin-top:10px;font-weight:600}
 
-  /* Hooks */
+  /* hooks */
   .hook{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 15px;margin-bottom:9px}
   .hook .h{font-family:'Fraunces',serif;font-weight:600;font-size:15.5px}
   .hook .h em{color:var(--wine);font-style:italic}
   .hook .b{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
 
-  /* Traps */
+  /* traps */
   .trap{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
   .trap:last-child{border-bottom:none}
   .trap .x{flex:0 0 auto;color:var(--wrong);font-weight:700;font-family:'Fraunces',serif}
 
-  /* Quiz */
+  /* quiz */
   .q{margin-bottom:14px}
   .q .stem{font-weight:600;font-size:15.5px;margin-bottom:9px}
   .q .stem span{color:var(--gold);font-family:'Fraunces',serif;font-style:italic;margin-right:6px}
-  .opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);
-    border-radius:10px;padding:11px 13px;margin-bottom:7px;font:inherit;font-size:14.5px;cursor:pointer;transition:all .12s}
+  .opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:11px 13px;margin-bottom:7px;font:inherit;font-size:14.5px;cursor:pointer;transition:all .12s}
   .opt:hover{border-color:var(--gold)}
   .opt.correct{border-color:var(--correct);background:#EAF1E5;color:var(--correct);font-weight:600}
   .opt.wrong{border-color:var(--wrong);background:#F4E7E4;color:var(--wrong)}
@@ -162,297 +142,348 @@
   .why{font-size:13.5px;color:var(--ink-soft);padding:9px 13px;background:#EFF1E6;border-radius:10px;margin-top:2px;display:none}
   .why.show{display:block}
   .score{font-family:'Fraunces',serif;font-size:17px;text-align:center;padding:14px;color:var(--ink-soft)}
-
-  footer{text-align:center;padding:30px 0 6px;color:var(--ink-soft);font-size:12px}
+  footer{text-align:center;padding:28px 0 4px;color:var(--ink-soft);font-size:12px}
   footer span{color:var(--gold)}
-
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;scroll-behavior:auto!important}
-  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="eyebrow">WSET Level 2 · Section 3 · Chapter 8</div>
-    <h1>Riesling<span class="dot">.</span></h1>
-    <p class="essence">Cool-climate, high-acid, cold-hardy. Made bone dry to lusciously sweet — and built to age.</p>
-  </header>
-
-  <div class="facts">
-    <div class="fact"><div class="k">Climate</div><div class="v">Cool–moderate</div></div>
-    <div class="fact"><div class="k">Acidity</div><div class="v">High</div></div>
-    <div class="fact"><div class="k">Body</div><div class="v">Light–full</div></div>
-    <div class="fact"><div class="k">Aged note</div><div class="v">Petrol</div></div>
+<!-- HOME -->
+<div id="home" class="wrap">
+  <div class="home-head">
+    <div class="eyebrow">WSET Level 2 Award in Wines</div>
+    <h1>Study Cards</h1>
+    <p>Tap a chapter. Built from your own study pack.</p>
   </div>
+  <div id="chapterGrid"></div>
+  <footer>Pass mark 55% · 50 questions · 1 hour</footer>
 </div>
 
-<nav>
-  <div class="pills">
-    <button class="pill" data-go="grape">The grape</button>
-    <button class="pill" data-go="ripeness">Ripeness</button>
-    <button class="pill" data-go="regions">Regions</button>
-    <button class="pill" data-go="labels">Labels</button>
-    <button class="pill" data-go="pradikat">Prädikat</button>
-    <button class="pill" data-go="hooks">Memory hooks</button>
-    <button class="pill" data-go="traps">Traps</button>
-    <button class="pill" data-go="quiz">Self-test</button>
-  </div>
-</nav>
-
-<div class="wrap">
-
-  <!-- GRAPE -->
-  <section id="grape">
-    <div class="s-head"><span class="s-num">i</span><h2>The grape</h2></div>
-    <div class="card">
-      <ul class="facts-list">
-        <li>Aromatic white grape, <b>cold-hardy</b>, naturally <b>high acidity</b>.</li>
-        <li>Susceptible to <b>botrytis (noble rot)</b>, so it can make quality wine at every sweetness level.</li>
-        <li>Prefers a <b>cool to moderate</b> climate: cool, dry and sunny so sugars and flavours build slowly.</li>
-        <li>Usually fermented in <b>inert vessels (stainless steel)</b> to protect its floral aromas.</li>
-        <li>Off-dry and medium styles: stop fermentation early, or add unfermented juice (<b>Süssreserve</b>).</li>
-        <li>Sweetest styles: from extra-ripe grapes whose high sugar halts fermentation naturally.</li>
-        <li>Can <b>age for years to decades</b> thanks to its high acidity.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- RIPENESS -->
-  <section id="ripeness">
-    <div class="s-head"><span class="s-num">ii</span><h2>Flavour by ripeness</h2></div>
-    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">Riesling's flavours shift with how ripe the grapes are picked. Tap each stage.</p>
-    <div class="spectrum">
-      <div class="stage">
-        <div class="stage-bar"><span class="swatch" style="background:#A9C24A"></span><span class="lbl">Just-ripe</span><span class="sub">cooler / earlier pick</span><span class="chev">▾</span></div>
-        <div class="stage-body"><div>Green fruit (apple, pear), citrus (lemon, lime) and floral (blossom) aromas. Lighter, racier styles.</div></div>
-      </div>
-      <div class="stage">
-        <div class="stage-bar"><span class="swatch" style="background:#E0A52E"></span><span class="lbl">Extra-ripe</span><span class="sub">warmer / later pick</span><span class="chev">▾</span></div>
-        <div class="stage-body"><div>Stone fruit (peach, apricot), tropical fruit (mango, pineapple) and dried fruit. Fuller, often sweeter.</div></div>
-      </div>
-      <div class="stage">
-        <div class="stage-bar"><span class="swatch" style="background:#8A5A2B"></span><span class="lbl">With age</span><span class="sub">years in bottle</span><span class="chev">▾</span></div>
-        <div class="stage-body"><div>High acidity keeps it fresh while it develops complex tertiary notes of <b>honey</b> and <b>petrol (gasoline)</b> — a positive marker, not a fault.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGIONS -->
-  <section id="regions">
-    <div class="s-head"><span class="s-num">iii</span><h2>Key regions</h2></div>
-    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">Tap a region for climate, place and style.</p>
-    <div id="regionWrap"></div>
-  </section>
-
-  <!-- LABELS -->
-  <section id="labels">
-    <div class="s-head"><span class="s-num">iv</span><h2>Labelling terms</h2></div>
-    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">Tap a card to flip it. Term on the front, meaning on the back.</p>
-    <div class="grid2" id="flashWrap"></div>
-  </section>
-
-  <!-- PRADIKAT -->
-  <section id="pradikat">
-    <div class="s-head"><span class="s-num">v</span><h2>The six Prädikat</h2></div>
-    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:8px">German quality levels ranked by <b>grape sugar at harvest</b>, not sweetness in the glass. Tap each rung.</p>
-    <div class="axis">↑ more grape sugar at harvest</div>
-    <div class="ladder" id="ladderWrap"></div>
-    <div class="ladder-note">Eiswein and Beerenauslese share the same minimum sugar — but Eiswein is frozen grapes with no botrytis, BA is botrytis.</div>
-  </section>
-
-  <!-- HOOKS -->
-  <section id="hooks">
-    <div class="s-head"><span class="s-num">vi</span><h2>Memory hooks</h2></div>
-    <div id="hookWrap"></div>
-  </section>
-
-  <!-- TRAPS -->
-  <section id="traps">
-    <div class="s-head"><span class="s-num">vii</span><h2>Likely exam traps</h2></div>
-    <div class="card" id="trapWrap"></div>
-  </section>
-
-  <!-- QUIZ -->
-  <section id="quiz">
-    <div class="s-head"><span class="s-num">viii</span><h2>Self-test</h2></div>
-    <div id="quizWrap"></div>
-    <div class="score" id="score"></div>
-  </section>
-
-  <footer>Built from your WSET L2 pack · <span>Riesling</span>, Ch. 8</footer>
+<!-- CHAPTER VIEW -->
+<div id="chapterView" class="hidden">
+  <div class="topbar"><div class="wrap"><button class="back" onclick="goHome()">&larr; All chapters</button></div></div>
+  <nav class="pills-bar"><div class="pills" id="pills"></div></nav>
+  <div class="wrap" id="chapterBody"></div>
 </div>
 
 <script>
-/* ---------- Data ---------- */
-const regions = [
-  {flag:"Germany", name:"Mosel", climate:"Very cool, most northerly", place:"Steep south / south-west slate slopes by the river; stony soils reflect light to aid ripening", style:"Lighter-bodied, often medium sweetness to balance very high acidity"},
-  {flag:"Germany", name:"Rheingau", climate:"Cool, slightly warmer than Mosel", place:"Steep south-facing slopes on the north bank of the Rhine", style:"Drier and fuller-bodied than Mosel"},
-  {flag:"Germany", name:"Pfalz", climate:"Drier and sunnier", place:"Near the French border — a climatic extension of Alsace", style:"Dry and medium-bodied"},
-  {flag:"France", name:"Alsace AOC", climate:"Dry and sunny (rain shadow of the Vosges Mtns)", place:"East of the Vosges; best sites are grands crus", style:"Dry, medium-bodied, high acid, ripe citrus & stone fruit. Sweet late-harvest = Vendanges Tardives"},
-  {flag:"Australia", name:"Eden & Clare Valley", climate:"Moderate (higher altitude, cooler than warm Barossa nearby)", place:"South Australia", style:"Dry, refreshing, lime & lemon, sometimes petrol"}
+/* ============ DATA ============ */
+const CHAPTERS = [
+{
+  id:"riesling", num:8, title:"Riesling", swatch:"#C9D38A",
+  section:"Section 3 · Grape Varieties & Still Wines",
+  essence:"Cool-climate, high-acid, cold-hardy. Made bone dry to lusciously sweet, and built to age.",
+  facts:[["Climate","Cool–moderate"],["Acidity","High"],["Body","Light–full"],["Aged note","Petrol"]],
+  sections:[
+    {type:"bullets", nav:"The grape", title:"The grape", items:[
+      "Aromatic white, <b>cold-hardy</b>, naturally <b>high acidity</b>.",
+      "Susceptible to <b>botrytis (noble rot)</b>; makes quality wine at every sweetness level.",
+      "Prefers <b>cool to moderate</b> climate: cool, dry, sunny so flavours build slowly.",
+      "Fermented in <b>inert vessels (stainless steel)</b> to protect floral aromas.",
+      "Off-dry / medium: stop fermentation early, or add unfermented juice (<b>Süssreserve</b>).",
+      "Sweetest styles: extra-ripe grapes whose high sugar halts fermentation naturally.",
+      "Ages <b>years to decades</b> thanks to high acidity."]},
+    {type:"spectrum", nav:"Ripeness", title:"Flavour by ripeness", intro:"Riesling's flavours shift with ripeness. Tap each stage.", stages:[
+      {c:"#A9C24A", lbl:"Just-ripe", sub:"cooler / earlier", body:"Green fruit (apple, pear), citrus (lemon, lime), floral (blossom)."},
+      {c:"#E0A52E", lbl:"Extra-ripe", sub:"warmer / later", body:"Stone fruit (peach, apricot), tropical (mango, pineapple), dried fruit."},
+      {c:"#8A5A2B", lbl:"With age", sub:"years in bottle", body:"Honey and <b>petrol (gasoline)</b> — a positive marker, not a fault."}]},
+    {type:"regions", nav:"Regions", title:"Key regions", intro:"Tap a region.", items:[
+      {flag:"Germany", name:"Mosel", climate:"Very cool, most northerly", place:"Steep south/SW slate slopes by the river; stony soils reflect light", style:"Lighter-bodied, often medium sweetness to balance very high acidity"},
+      {flag:"Germany", name:"Rheingau", climate:"Cool, a touch warmer than Mosel", place:"Steep south-facing slopes, north bank of the Rhine", style:"Drier and fuller than Mosel"},
+      {flag:"Germany", name:"Pfalz", climate:"Drier, sunnier", place:"Near French border; climatic extension of Alsace", style:"Dry, medium-bodied"},
+      {flag:"France", name:"Alsace AOC", climate:"Dry, sunny (Vosges rain shadow)", place:"Top sites are grands crus", style:"Dry, medium body, high acid, citrus & stone fruit. Sweet = Vendanges Tardives"},
+      {flag:"Australia", name:"Eden & Clare Valley", climate:"Moderate (higher altitude, cooler than Barossa)", place:"South Australia", style:"Dry, refreshing, lime & lemon, sometimes petrol"}]},
+    {type:"flash", nav:"Labels", title:"Labelling terms", intro:"Tap a card to flip it.", cards:[
+      {t:"Trocken", h:"German label term", d:"Dry."},
+      {t:"Halbtrocken", h:"German label term", d:"Off-dry — some sweetness."},
+      {t:"Landwein", h:"German quality tier", d:"German PGI; light-bodied, dry to off-dry."},
+      {t:"Qualitätswein", h:"German quality tier", d:"German PDO; from one of 13 areas; riper, fuller than Landwein."},
+      {t:"Prädikatswein", h:"German quality tier", d:"Higher minimum grape sugar; from a single area; six Prädikat levels."},
+      {t:"Süssreserve", h:"Sweetening method", d:"Unfermented grape juice added back to raise sweetness."},
+      {t:"Vendanges Tardives", h:"Alsace term", d:"Late-harvest, sweeter Alsace style."}]},
+    {type:"ladder", title:"The six Prädikat", intro:"Ranked by <b>grape sugar at harvest</b>, not sweetness in the glass. Tap each rung.",
+      note:"Eiswein and Beerenauslese share the same minimum sugar — but Eiswein is frozen grapes, no botrytis; BA is botrytis.",
+      rungs:[
+      {ab:"K", name:"Kabinett", gloss:"lightest, most delicate", col:"#C9D38A", body:"Light body, green apple, lime, blossom."},
+      {ab:"S", name:"Spätlese", gloss:"\u201Clate harvest\u201D", col:"#D8C262", body:"Riper, fuller than Kabinett. Riper citrus plus peach."},
+      {ab:"A", name:"Auslese", gloss:"\u201Cselected harvest\u201D", col:"#D89E3A", body:"Selected extra-ripe bunches. Apricot, mango, dried fruit. Often sweet but can be trocken."},
+      {ab:"B", name:"Beerenauslese", gloss:"selected berries", col:"#B26A2E", body:"Selected botrytis berries. Fresh stone fruit, mango, dried fruit, honey."},
+      {ab:"E", name:"Eiswein", gloss:"frozen on the vine", col:"#9A4C36", body:"Frozen grapes, no botrytis. Fresh peach, apricot, tropical. Rare, tiny yields."},
+      {ab:"T", name:"TBA", gloss:"dried berries", col:"#6A2E40", body:"Trockenbeerenauslese: selected botrytis 'dried' berries. Rare, like an intense BA."}]},
+    {type:"hooks", nav:"Hooks", title:"Memory hooks", items:[
+      {h:"<em>\u201CKan Sophie Always Bring Extra Treats?\u201D</em>", b:"Prädikat by sugar: Kabinett · Spätlese · Auslese · Beerenauslese · Eiswein · TBA."},
+      {h:"Old Rieslings run on <em>petrol</em>.", b:"The petrol note is a sign of age, never a fault."},
+      {h:"<em>Ice</em> has no rot.", b:"Eiswein = frozen, no botrytis. BA = botrytis. Same min sugar."},
+      {h:"<em>Halb</em> = half-dry.", b:"Halbtrocken = off-dry. Trocken = fully dry."},
+      {h:"Mosel = most northerly, most <em>light</em>.", b:"Lighter, often a touch sweet. Not all German Riesling is sweet."}]},
+    {type:"traps", nav:"Traps", title:"Likely exam traps", items:[
+      "Petrol is a positive aged note, not a fault.",
+      "Prädikat ranks by grape sugar at harvest, not glass sweetness — an Auslese can be dry.",
+      "Eiswein = frozen, no botrytis; BA = botrytis. Same minimum sugar.",
+      "Trocken = dry, Halbtrocken = off-dry.",
+      "Liebfraumilch is the cheap sweet style Riesling is wrongly linked to.",
+      "Mosel lighter/sweeter; Rheingau, Pfalz, Alsace drier/fuller."]},
+    {type:"quiz", nav:"Test", title:"Self-test", items:[
+      {q:"Which aged aroma is a positive, characteristic note in Riesling?", opts:["Vanilla","Petrol","Butter","Smoke"], a:1, why:"High acidity preserves the wine as it ages, developing honey and petrol."},
+      {q:"The six Prädikat categories are ranked by…", opts:["Sweetness in the bottle","Alcohol","Grape sugar at harvest","Price"], a:2, why:"By grape sugar at harvest — which is why a high Prädikat like Auslese can be dry."},
+      {q:"Which sweet style is from grapes frozen on the vine, no botrytis?", opts:["Beerenauslese","Auslese","Eiswein","Spätlese"], a:2, why:"Eiswein uses frozen grapes and no noble rot."},
+      {q:"Mosel Rieslings are typically…", opts:["Full-bodied and dry","Lighter-bodied, often some sweetness","Fortified","Heavily oaked"], a:1, why:"The cool, northerly Mosel gives lighter bodies and often medium sweetness."},
+      {q:"\u201CTrocken\u201D on a German label means…", opts:["Sweet","Off-dry","Dry","Sparkling"], a:2, why:"Trocken = dry; Halbtrocken = off-dry."}]}
+  ]
+},
+{
+  id:"chenin", num:9, title:"Chenin Blanc, Sémillon & Furmint", swatch:"#D8C262",
+  section:"Section 3 · Grape Varieties & Still Wines",
+  essence:"Three versatile whites that all swing from dry to outstanding sweet, helped by high acidity and a love of noble rot.",
+  sections:[
+    {type:"subhead", nav:"Chenin", title:"Chenin Blanc", sub:"Most versatile white; cool to warm; dry to sweet"},
+    {type:"gfacts", facts:[["Climate","Cool–warm"],["Acidity","High"],["Body","Light–full"],["Styles","Dry → sweet"]]},
+    {type:"bullets", items:[
+      "Hugely versatile; grows in cool, moderate and warm climates.",
+      "Flavours by ripeness: apple, lemon → peach, pineapple, mango.",
+      "High acidity → suits <b>late harvest</b> and <b>botrytis</b>; dry through to sweet; oaked and unoaked.",
+      "High acidity lets good examples <b>age many years</b>."]},
+    {type:"regions", items:[
+      {flag:"France", name:"Vouvray AOC (Loire)", climate:"Classic Chenin region", place:"Chenin is the only permitted variety", style:"All styles: dry, off-dry/medium (Demi-Sec), sweet, sparkling. Usually unoaked. Sweet from extra-ripe/botrytis"},
+      {flag:"S. Africa", name:"South Africa", climate:"Warm; prized for holding acidity", place:"Its most-planted white grape", style:"Inexpensive often labelled Western Cape, blended, dry/medium, peach & pineapple. Old-vine = concentrated, tropical, oak"}]},
+
+    {type:"subhead", nav:"Sémillon", title:"Sémillon / Semillon", sub:"Moderate–warm; botrytis star of Sauternes"},
+    {type:"gfacts", facts:[["Climate","Moderate–warm"],["Acidity","Med–high"],["Body","Light–full"],["Note","Botrytis sweet"]]},
+    {type:"bullets", items:[
+      "Youthful flavours: apple, lemon, grass. Ages to dried fruit, nuts, honey.",
+      "Spelling tells origin: <b>Sémillon</b> (France) vs <b>Semillon</b> (English-speaking).",
+      "France: key region <b>Bordeaux</b>; commonly blended with Sauvignon Blanc, adds body & ageing.",
+      "<b>Sauternes AOC</b> (Bordeaux): sweet, botrytis-concentrated; full body, high acid, apricot, oak (smoke, vanilla); ages to honey & caramel.",
+      "Australia: <b>Hunter Valley</b> dry single-varietal, picked early, light & low alcohol, ages to honey & nuts. <b>Barossa</b> ranges to full, oaked."]},
+    {type:"regions", items:[
+      {flag:"France", name:"Sauternes AOC", climate:"Botrytis-friendly", place:"Small sweet sub-region of Bordeaux", style:"Sweet, full-bodied, high acid, apricot, smoke/vanilla; ages to dried fruit, honey, caramel"},
+      {flag:"Australia", name:"Hunter Valley", climate:"Warm, picked early", place:"New South Wales", style:"Dry, light body, low alcohol; neutral young, ages to honey & nuts"}]},
+
+    {type:"subhead", nav:"Furmint", title:"Furmint", sub:"Hungary's Tokaj; home of Tokaji Aszú"},
+    {type:"gfacts", facts:[["Climate","Cool (Tokaj)"],["Acidity","High"],["Body","Full"],["Note","Tokaji Aszú"]]},
+    {type:"bullets", items:[
+      "Grown most widely in <b>Hungary</b>; high acidity, very prone to botrytis.",
+      "Most-planted grape of <b>Tokaj</b>; principal grape of <b>Tokaji Aszú</b> (sweet, botrytis), often blended locally.",
+      "Sweetness shown by <b>Puttonyos</b> on the label: 5 or 6, with <b>6 sweeter than 5</b>.",
+      "Tokaji Aszú: amber, oak-aged, apricot, citrus, vanilla, dried fruit/caramel/nuts; full body balanced by high acid. Among the world's best sweet wines."]},
+
+    {type:"flash", nav:"Labels", title:"Labelling terms", intro:"Tap a card to flip it.", cards:[
+      {t:"Demi-Sec", h:"Vouvray / Loire", d:"Off-dry to medium-sweet Chenin Blanc."},
+      {t:"Western Cape", h:"South Africa", d:"Broad GI; often inexpensive, blended Chenin from warmer inland."},
+      {t:"Sauternes AOC", h:"Bordeaux", d:"Sweet botrytis wine, mostly Sémillon."},
+      {t:"Tokaji Aszú", h:"Hungary", d:"Sweet botrytis Furmint wine from Tokaj."},
+      {t:"Puttonyos", h:"Tokaj sweetness scale", d:"Higher number = sweeter; 6 sweeter than 5."},
+      {t:"Sémillon vs Semillon", h:"Spelling", d:"Accent = France; no accent = English-speaking world."}]},
+    {type:"hooks", nav:"Hooks", title:"Memory hooks", items:[
+      {h:"<em>S → S</em>: Sémillon makes Sauternes.", b:"Sémillon's botrytis-love makes it the Sauternes star; blended with Sauvignon Blanc."},
+      {h:"Chenin's heart is <em>Vouvray</em>.", b:"Loire's only grape there; Demi-Sec = off-dry. But South Africa plants the most."},
+      {h:"Furmint = <em>Tokaj</em>, count the Puttonyos.", b:"6 Puttonyos is sweeter than 5."},
+      {h:"Hunter <em>Semillon</em>: pick early, age long.", b:"Light, low-alcohol, neutral young → honey & nuts with age."}]},
+    {type:"traps", nav:"Traps", title:"Likely exam traps", items:[
+      "Sémillon (not Sauvignon Blanc) is the main botrytis grape in Sauternes; they're blended together.",
+      "Vouvray Demi-Sec = off-dry, not dry.",
+      "More Puttonyos = sweeter (6 > 5).",
+      "Furmint is Hungarian (Tokaj), not French.",
+      "Chenin's classic home is the Loire, but South Africa grows the most.",
+      "Spelling flags origin: Sémillon = France."]},
+    {type:"quiz", nav:"Test", title:"Self-test", items:[
+      {q:"Which grape is the most important in Sauternes, thanks to its botrytis susceptibility?", opts:["Chenin Blanc","Sémillon","Furmint","Chardonnay"], a:1, why:"Sémillon is particularly prone to botrytis, so it's the key Sauternes grape."},
+      {q:"Vouvray AOC, the classic Chenin Blanc region, is in…", opts:["Bordeaux","The Loire Valley","Tokaj","Barossa Valley"], a:1, why:"Vouvray sits in the Loire, where Chenin is the only permitted variety."},
+      {q:"Tokaji Aszú sweetness is shown on the label by…", opts:["Number of Puttonyos","Prädikat level","Demi-Sec","Grand Cru"], a:0, why:"Puttonyos indicate sweetness; 6 is sweeter than 5."},
+      {q:"Chenin Blanc is the most-planted white grape of which country?", opts:["France","South Africa","Hungary","Australia"], a:1, why:"It's South Africa's most-planted white, prized for holding acidity in warmth."},
+      {q:"Hunter Valley's distinctive dry Semillon is…", opts:["Full-bodied and oaky","Light-bodied, low alcohol, ages to honey & nuts","Sweet and botrytised","Sparkling"], a:1, why:"Picked early in a warm climate: light, low-alcohol, neutral young, complex with age."}]}
+  ]
+},
+{
+  id:"chardonnay", num:10, title:"Chardonnay", swatch:"#E0C24A",
+  section:"Section 3 · Grape Varieties & Still Wines",
+  essence:"The winemaker's chameleon. Climate and oak decide everything, from steely Chablis to tropical, buttery blockbusters.",
+  facts:[["Climate","Cool–warm"],["Body","Light–full"],["Oak","Often"],["Aged note","Hazelnut"]],
+  sections:[
+    {type:"spectrum", nav:"Styles", title:"Style by climate", intro:"Chardonnay takes its shape from climate. Tap each.", stages:[
+      {c:"#A9C24A", lbl:"Cool climate", sub:"e.g. Chablis", body:"High acidity, light–medium body, green fruit (apple, pear), citrus (lemon), wet stones."},
+      {c:"#E0A52E", lbl:"Moderate climate", sub:"e.g. Côte d'Or", body:"Medium–high acidity, medium–full body, lemon, stone fruit (peach), sometimes melon."},
+      {c:"#8A5A2B", lbl:"Warm climate", sub:"e.g. Pays d'Oc", body:"Full-bodied, medium acidity, stone fruit (peach), tropical (pineapple, banana)."}]},
+    {type:"bullets", nav:"Winemaking", title:"Winemaking & maturation", items:[
+      "<b>Acidification</b> is common for warm-climate Chardonnay to balance alcohol & body.",
+      "<b>Malolactic conversion</b> → dairy (butter, cream), softens harsh acids.",
+      "<b>Lees contact</b> → body, bread & biscuit. <b>Oak</b> → smoke, vanilla, coconut (chips/staves cheaper).",
+      "These are all optional; oak can overwhelm light wines. No-oak wines may be labelled <b>'unoaked'/'unwooded'</b>.",
+      "Top wines age for years → tertiary <b>hazelnut, mushroom</b>."]},
+    {type:"regions", nav:"Regions", title:"Key regions", intro:"Tap a region.", items:[
+      {flag:"Burgundy", name:"Chablis AOC", climate:"Cool; frost a risk", place:"Northern Burgundy; best sites Premier/Grand Cru on S/SW slopes", style:"Dry, light–medium body, high acid, apple, lemon, wet stones. Unoaked (inert vessels)"},
+      {flag:"Burgundy", name:"Côte d'Or", climate:"Moderate", place:"Côte de Beaune: Meursault & Puligny-Montrachet", style:"More body & riper fruit; oak + lees; premier/grand cru age decades → hazelnut, mushroom. The pinnacle"},
+      {flag:"Burgundy", name:"Mâconnais", climate:"Warmer south", place:"Mâcon AOC; Pouilly-Fuissé AOC", style:"Fruity, mostly unoaked, simple (lemon, peach, melon). Pouilly-Fuissé higher quality, often oaked"},
+      {flag:"France", name:"Languedoc (Pays d'Oc IGP)", climate:"Warm", place:"Mediterranean coast", style:"High-volume, ripe & fruity (peach, pineapple, banana); top wines may see oak"},
+      {flag:"USA", name:"California", climate:"Warm inland → cool coast", place:"Central Valley vs Los Carneros, Sonoma, Napa, Santa Barbara", style:"Inland = high-volume (labelled California). Coastal = balanced; Napa full + new oak"},
+      {flag:"USA", name:"Oregon", climate:"Moderate", place:"Smaller than California", style:"Refreshing high acidity, lemon to melon"},
+      {flag:"Australia", name:"Australia", climate:"Warm inland → cool pockets", place:"S.E. Australia; Adelaide Hills, Yarra, Margaret River", style:"High-volume (S.E. Australia). Cooler sites: ripe peach, balanced oak, med–high acid"},
+      {flag:"N. Zealand", name:"New Zealand", climate:"Cool–moderate", place:"Marlborough; Hawke's Bay", style:"Ripe lemon/peach/melon, high acid, subtle oak; Hawke's Bay fuller"},
+      {flag:"Chile", name:"Chile", climate:"Cool coast → warm valley", place:"Casablanca Valley; Central Valley", style:"Casablanca refreshing, citrus/peach; Central Valley high-volume to outstanding"}]},
+    {type:"flash", nav:"Labels", title:"Labelling terms", intro:"Tap a card to flip it.", cards:[
+      {t:"Chablis AOC", h:"Burgundy", d:"Cool, unoaked Chardonnay — labelled by place, not grape."},
+      {t:"Côte d'Or", h:"Burgundy", d:"Moderate heart of Burgundy; Meursault & Puligny-Montrachet."},
+      {t:"Mâcon AOC", h:"Burgundy", d:"Southern Burgundy; fruity, mostly unoaked Chardonnay."},
+      {t:"Pays d'Oc IGP", h:"Languedoc", d:"Warm-climate, high-volume, fruity Chardonnay."},
+      {t:"Unoaked / unwooded", h:"Style signal", d:"Tells the consumer the wine saw no oak treatment."},
+      {t:"Malolactic conversion", h:"Winemaking", d:"Adds buttery/creamy dairy notes; softens acids."},
+      {t:"Lees contact", h:"Winemaking", d:"Adds body and bread/biscuit flavours."}]},
+    {type:"hooks", nav:"Hooks", title:"Memory hooks", items:[
+      {h:"Cool = <em>lean & green</em>, warm = <em>full & tropical</em>.", b:"Climate drives Chardonnay's body, acid and fruit."},
+      {h:"Chablis = <em>steel, not oak</em>.", b:"Cool, unoaked, apple/lemon/wet stones. Labelled by region."},
+      {h:"<em>MLF = milk</em>.", b:"Malolactic conversion gives butter & cream; lees give bread; oak gives vanilla/smoke."},
+      {h:"Côte d'Or = the <em>crown</em>.", b:"Meursault & Puligny-Montrachet: oak + lees, age decades, top Chardonnay."},
+      {h:"<em>Pays d'Oc</em> = the volume play.", b:"Warm Languedoc, ripe and fruity, high volumes."}]},
+    {type:"traps", nav:"Traps", title:"Likely exam traps", items:[
+      "Chablis is Chardonnay, even though it's labelled by place, not grape.",
+      "'Unoaked'/'unwooded' = a deliberate no-oak signal.",
+      "Dairy = malolactic; bread/biscuit = lees; vanilla/smoke/coconut = oak. Keep the sources straight.",
+      "Côte d'Or (Meursault, Puligny) = top oaked Burgundy; Chablis = unoaked. Both Burgundy.",
+      "Acidification (adding acid) is common in warm-climate, not cool.",
+      "Aged Chardonnay tertiary notes = hazelnut, mushroom — not fruit."]},
+    {type:"quiz", nav:"Test", title:"Self-test", items:[
+      {q:"Chablis AOC Chardonnay is typically…", opts:["Full-bodied, heavily oaked","Dry, high acidity, unoaked (apple, lemon, wet stones)","Sweet and botrytised","Off-dry, medium body"], a:1, why:"Cool-climate Chablis is dry, high-acid and unoaked to preserve delicate fruit."},
+      {q:"Which process adds buttery, creamy dairy flavours and softens acids?", opts:["Lees contact","Malolactic conversion","Acidification","Oak chips"], a:1, why:"Malolactic conversion creates dairy notes (butter, cream) and softens harsh acids."},
+      {q:"A wine labelled 'unoaked' or 'unwooded' tells the consumer…", opts:["It's sweet","It had no oak treatment","It's from old vines","It's sparkling"], a:1, why:"The terms communicate that no oak was used."},
+      {q:"The pinnacle of Chardonnay (Meursault, Puligny-Montrachet) is in which part of Burgundy?", opts:["Chablis","Côte d'Or","Mâconnais","Languedoc"], a:1, why:"The Côte d'Or (Côte de Beaune) is home to the top oaked Burgundy Chardonnays."},
+      {q:"Most Chardonnay from Languedoc-Roussillon is labelled…", opts:["Mâcon AOC","Pays d'Oc IGP","Bourgogne AOC","California"], a:1, why:"Pays d'Oc IGP covers most of the region's warm-climate, fruity Chardonnay."}]}
+  ]
+}
 ];
 
-const flashcards = [
-  {t:"Trocken", h:"German label term", d:"Dry."},
-  {t:"Halbtrocken", h:"German label term", d:"Off-dry — a wine with some sweetness."},
-  {t:"Landwein", h:"German quality tier", d:"German PGI wine; light-bodied, dry to off-dry."},
-  {t:"Qualitätswein", h:"German quality tier", d:"German PDO; from one of 13 winegrowing areas; riper, fuller and more intense than Landwein."},
-  {t:"Prädikatswein", h:"German quality tier", d:"Higher minimum grape sugar than Qualitätswein; from a single area; split into six Prädikat levels."},
-  {t:"Süssreserve", h:"Sweetening method", d:"Unfermented grape juice added back to a wine to raise sweetness."},
-  {t:"Vendanges Tardives", h:"Alsace term", d:"Late-harvest grapes making a sweeter Alsace style."},
-  {t:"Liebfraumilch", h:"Watch out", d:"A low-quality sweet style Riesling is wrongly linked to — not what premium Riesling is."}
-];
+/* ============ RENDER HELPERS ============ */
+const el=(html)=>{const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;};
+const ROMAN=["i","ii","iii","iv","v","vi","vii","viii","ix","x"];
 
-const pradikat = [
-  {ab:"K", name:"Kabinett", gloss:"lightest, most delicate", col:"#C9D38A", body:"Lightest, most delicate. Light body with green apple, lime and blossom."},
-  {ab:"S", name:"Spätlese", gloss:"\u201Clate harvest\u201D", col:"#D8C262", body:"Riper and fuller than Kabinett. Riper citrus plus some peach."},
-  {ab:"A", name:"Auslese", gloss:"\u201Cselected harvest\u201D", col:"#D89E3A", body:"From selected extra-ripe bunches. Apricot, mango, dried fruit. Usually some sweetness but can be trocken (dry)."},
-  {ab:"B", name:"Beerenauslese", gloss:"selected berries", col:"#B26A2E", body:"Selected botrytis-affected berries. Fresh stone fruit, mango, dried fruit and honey."},
-  {ab:"E", name:"Eiswein", gloss:"grapes frozen on the vine", col:"#9A4C36", body:"Grapes frozen on the vine, no botrytis. Fresh peach/apricot and tropical fruit. Rare, tiny yields, high prices."},
-  {ab:"T", name:"Trockenbeerenauslese", gloss:"\u201Cdried\u201D berries (TBA)", col:"#6A2E40", body:"Individually selected botrytis 'dried' berries. Rare, like a more intense BA."}
-];
+function renderHome(){
+  const grid=document.getElementById('chapterGrid');
+  let html='<div class="sec-label">Section 3 · Grape Varieties & Still Wines</div>';
+  CHAPTERS.forEach(ch=>{
+    html+=`<button class="ch-card" onclick="openChapter('${ch.id}')">
+      <span class="ch-num" style="background:${ch.swatch};color:#3a2e10">${ch.num}</span>
+      <span class="ch-meta"><h2>${ch.title}</h2><span class="ess">${ch.essence}</span></span>
+      <span class="arrow">&rarr;</span></button>`;
+  });
+  grid.innerHTML=html;
+}
 
-const hooks = [
-  {h:"<em>\u201CKan Sophie Always Bring Extra Treats?\u201D</em>", b:"Prädikat order by sugar: Kabinett · Spätlese · Auslese · Beerenauslese · Eiswein · TBA."},
-  {h:"Old Rieslings run on <em>petrol</em>.", b:"The petrol / gasoline note is a positive sign of age, never a fault."},
-  {h:"<em>Ice</em> has no rot.", b:"Eiswein = frozen grapes, no botrytis. Beerenauslese = botrytis. Same minimum sugar, different method."},
-  {h:"<em>Halb</em> = half-dry.", b:"Halbtrocken = off-dry. Trocken = fully dry. Don't flip them."},
-  {h:"Land → Qualität → <em>Prädikat</em>.", b:"Climbing ripeness: Landwein (PGI) under Qualitätswein (PDO) under Prädikatswein (by sugar)."},
-  {h:"<em>Tardive</em> = tardy = late.", b:"Vendanges Tardives is the sweet late-harvest style of Alsace."},
-  {h:"Mosel = most northerly, most <em>light</em>.", b:"Lighter body, often a touch sweet, from steep slate slopes. Not all German Riesling is sweet though."}
-];
+function buildSection(sec, idx){
+  const id="sec-"+idx;
+  let inner="";
+  const head=(n,t)=>`<div class="s-head"><span class="s-num">${ROMAN[n]||""}</span><h2 class="s">${t}</h2></div>`;
+  const intro=sec.intro?`<p class="intro-line">${sec.intro}</p>`:"";
+  switch(sec.type){
+    case "subhead":
+      return el(`<section id="${id}"><div class="subhead">${sec.title}<span class="s-sub">${sec.sub||""}</span></div></section>`);
+    case "gfacts":{
+      let f=sec.facts.map(([k,v])=>`<div class="fact"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+      return el(`<section id="${id}"><div class="gfacts">${f}</div></section>`);
+    }
+    case "bullets":{
+      const t=sec.title?head(sec._n,sec.title):"";
+      const lis=sec.items.map(i=>`<li>${i}</li>`).join("");
+      return el(`<section id="${id}">${t}<div class="card"><ul class="facts-list">${lis}</ul></div></section>`);
+    }
+    case "spectrum":{
+      const stages=sec.stages.map(s=>`<div class="stage"><div class="stage-bar"><span class="swatch" style="background:${s.c}"></span><span class="lbl">${s.lbl}</span><span class="sub">${s.sub}</span><span class="chev">&#9662;</span></div><div class="stage-body"><div>${s.body}</div></div></div>`).join("");
+      return el(`<section id="${id}">${head(sec._n,sec.title)}${intro}<div class="spectrum">${stages}</div></section>`);
+    }
+    case "regions":{
+      const cards=sec.items.map(r=>`<div class="card region"><div class="top"><span class="flag">${r.flag}</span><h3>${r.name}</h3></div><div class="meta"><div class="mrow"><div class="mk">Climate</div><div>${r.climate}</div></div><div class="mrow"><div class="mk">Place</div><div>${r.place}</div></div><div class="mrow"><div class="mk">Style</div><div>${r.style}</div></div></div></div>`).join("");
+      return el(`<section id="${id}">${sec.title?head(sec._n,sec.title):""}${intro}${cards}</section>`);
+    }
+    case "flash":{
+      const cards=sec.cards.map(c=>`<div class="flash"><div class="flash-in"><div class="flash-face flash-front"><div class="term">${c.t}</div><div class="hint">${c.h} · tap to reveal</div></div><div class="flash-face flash-back"><div class="def">${c.d}</div></div></div></div>`).join("");
+      return el(`<section id="${id}">${head(sec._n,sec.title)}${intro}<div class="grid2">${cards}</div></section>`);
+    }
+    case "ladder":{
+      const rungs=sec.rungs.map(p=>`<div class="rung"><div class="rung-bar"><span class="level" style="background:${p.col}">${p.ab}</span><span class="name">${p.name}</span><span class="gloss">${p.gloss}</span></div><div class="rung-body"><div>${p.body}</div></div></div>`).join("");
+      return el(`<section id="${id}">${head(sec._n,sec.title)}${intro}<div class="axis">&uarr; more grape sugar at harvest</div>${rungs}<div class="ladder-note">${sec.note}</div></section>`);
+    }
+    case "hooks":{
+      const hk=sec.items.map(h=>`<div class="hook"><div class="h">${h.h}</div><div class="b">${h.b}</div></div>`).join("");
+      return el(`<section id="${id}">${head(sec._n,sec.title)}${hk}</section>`);
+    }
+    case "traps":{
+      const tr=sec.items.map(t=>`<div class="trap"><span class="x">!</span><span>${t}</span></div>`).join("");
+      return el(`<section id="${id}">${head(sec._n,sec.title)}<div class="card">${tr}</div></section>`);
+    }
+    case "quiz":{
+      const sec_el=el(`<section id="${id}">${head(sec._n,sec.title)}<div class="quizwrap"></div><div class="score"></div></section>`);
+      const qw=sec_el.querySelector('.quizwrap');
+      let answered=0,correct=0;const total=sec.items.length;
+      sec.items.forEach((item,qi)=>{
+        const card=el(`<div class="q card"><div class="stem"><span>${qi+1}.</span>${item.q}</div></div>`);
+        item.opts.forEach((o,oi)=>{
+          const b=el(`<button class="opt">${o}</button>`);
+          b.addEventListener('click',()=>{
+            const group=[...card.querySelectorAll('.opt')];
+            if(group.some(x=>x.disabled))return;
+            group.forEach(x=>x.disabled=true);
+            if(oi===item.a){b.classList.add('correct');correct++;}
+            else{b.classList.add('wrong');group[item.a].classList.add('correct');}
+            card.querySelector('.why').classList.add('show');
+            answered++;
+            if(answered===total){sec_el.querySelector('.score').textContent=`You scored ${correct} / ${total}.`;}
+          });
+          card.appendChild(b);
+        });
+        card.appendChild(el(`<div class="why">${item.why}</div>`));
+        qw.appendChild(card);
+      });
+      return sec_el;
+    }
+  }
+  return el(`<section id="${id}"></section>`);
+}
 
-const traps = [
-  "Petrol / gasoline is a positive aged note in Riesling, not a fault.",
-  "Prädikat ranks by grape sugar at harvest, not sweetness in the glass — an Auslese can be dry.",
-  "Eiswein and BA share the same minimum sugar: Eiswein is frozen, no botrytis; BA is botrytis.",
-  "Trocken = dry, Halbtrocken = off-dry. Easy to reverse.",
-  "Liebfraumilch is the cheap sweet style Riesling gets wrongly linked to.",
-  "Mosel skews lighter and often sweeter; Rheingau, Pfalz and Alsace skew drier and fuller."
-];
+function openChapter(cid){
+  const ch=CHAPTERS.find(c=>c.id===cid);
+  document.getElementById('home').classList.add('hidden');
+  const view=document.getElementById('chapterView');
+  view.classList.remove('hidden');
+  const body=document.getElementById('chapterBody');
+  body.innerHTML="";
 
-const quiz = [
-  {q:"Which aged aroma is a positive, characteristic note in Riesling?",
-   opts:["Vanilla","Petrol","Butter","Smoke"], a:1,
-   why:"High acidity preserves the wine while it ages, developing honey and petrol notes."},
-  {q:"The six Prädikat categories are ranked by…",
-   opts:["Sweetness in the bottle","Alcohol level","Grape sugar at harvest","Price"], a:2,
-   why:"They rank by grape sugar at harvest, which is why a high-Prädikat wine like Auslese can still be made dry."},
-  {q:"Which sweet style is made from grapes frozen on the vine, with no botrytis?",
-   opts:["Beerenauslese","Auslese","Eiswein","Spätlese"], a:2,
-   why:"Eiswein uses frozen grapes and no noble rot. BA, by contrast, relies on botrytis."},
-  {q:"Mosel Rieslings are typically…",
-   opts:["Full-bodied and dry","Lighter-bodied, often with some sweetness","Fortified","Heavily oaked"], a:1,
-   why:"The Mosel is very northerly and cool, giving lighter bodies and often medium sweetness to balance high acidity."},
-  {q:"\u201CTrocken\u201D on a German label means…",
-   opts:["Sweet","Off-dry","Dry","Sparkling"], a:2,
-   why:"Trocken means dry. Halbtrocken means off-dry."},
-  {q:"A sweeter, late-harvest Alsace Riesling is labelled…",
-   opts:["Vendanges Tardives","Spätlese","Süssreserve","Liebfraumilch"], a:0,
-   why:"Vendanges Tardives is the Alsace late-harvest term. Spätlese is the German equivalent idea, but the label term asked is Alsatian."}
-];
+  // header
+  let factsHtml="";
+  if(ch.facts){factsHtml=`<div class="facts">${ch.facts.map(([k,v])=>`<div class="fact"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("")}</div>`;}
+  body.appendChild(el(`<header class="ch"><div class="eyebrow">${ch.section} · Ch. ${ch.num}</div><h1>${ch.title}</h1><p class="essence">${ch.essence}</p>${factsHtml}</header>`));
 
-/* ---------- Render ---------- */
-const regionWrap = document.getElementById('regionWrap');
-regions.forEach(r=>{
-  const el=document.createElement('div');
-  el.className='card region';
-  el.innerHTML=`<div class="top"><span class="flag">${r.flag}</span><h3>${r.name}</h3></div>
-    <div class="meta">
-      <div class="mrow"><div class="mk">Climate</div><div>${r.climate}</div></div>
-      <div class="mrow"><div class="mk">Place</div><div>${r.place}</div></div>
-      <div class="mrow"><div class="mk">Style</div><div>${r.style}</div></div>
-    </div>`;
-  el.querySelector('.top').addEventListener('click',()=>el.classList.toggle('open'));
-  regionWrap.appendChild(el);
-});
+  // number the numbered sections
+  let n=0;
+  ch.sections.forEach(s=>{ if(["bullets","spectrum","flash","ladder","hooks","traps","quiz","regions"].includes(s.type) && (s.title)) {s._n=n;n++;} });
 
-const flashWrap=document.getElementById('flashWrap');
-flashcards.forEach(c=>{
-  const el=document.createElement('div');
-  el.className='flash';
-  el.innerHTML=`<div class="flash-in">
-      <div class="flash-face flash-front"><div class="term">${c.t}</div><div class="hint">${c.h} · tap to reveal</div></div>
-      <div class="flash-face flash-back"><div class="def">${c.d}</div></div>
-    </div>`;
-  el.addEventListener('click',()=>el.classList.toggle('flip'));
-  flashWrap.appendChild(el);
-});
-
-const ladderWrap=document.getElementById('ladderWrap');
-pradikat.forEach(p=>{
-  const el=document.createElement('div');
-  el.className='rung';
-  el.innerHTML=`<div class="rung-bar"><span class="level" style="background:${p.col}">${p.ab}</span>
-      <span class="name">${p.name}</span><span class="gloss">${p.gloss}</span></div>
-    <div class="rung-body"><div>${p.body}</div></div>`;
-  el.addEventListener('click',()=>el.classList.toggle('open'));
-  ladderWrap.appendChild(el);
-});
-
-const hookWrap=document.getElementById('hookWrap');
-hooks.forEach(h=>{
-  const el=document.createElement('div');
-  el.className='hook';
-  el.innerHTML=`<div class="h">${h.h}</div><div class="b">${h.b}</div>`;
-  hookWrap.appendChild(el);
-});
-
-const trapWrap=document.getElementById('trapWrap');
-traps.forEach(t=>{
-  const el=document.createElement('div');
-  el.className='trap';
-  el.innerHTML=`<span class="x">!</span><span>${t}</span>`;
-  trapWrap.appendChild(el);
-});
-
-let answered=0, correct=0;
-const quizWrap=document.getElementById('quizWrap');
-quiz.forEach((item,qi)=>{
-  const el=document.createElement('div');
-  el.className='q card';
-  let opts='';
-  item.opts.forEach((o,oi)=>{opts+=`<button class="opt" data-q="${qi}" data-o="${oi}">${o}</button>`;});
-  el.innerHTML=`<div class="stem"><span>${qi+1}.</span>${item.q}</div>${opts}<div class="why" id="why-${qi}">${item.why}</div>`;
-  quizWrap.appendChild(el);
-});
-const scoreEl=document.getElementById('score');
-quizWrap.querySelectorAll('.opt').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const qi=+btn.dataset.q, oi=+btn.dataset.o;
-    const group=quizWrap.querySelectorAll(`.opt[data-q="${qi}"]`);
-    if([...group].some(b=>b.disabled))return;
-    group.forEach(b=>b.disabled=true);
-    const ans=quiz[qi].a;
-    if(oi===ans){btn.classList.add('correct');correct++;}
-    else{btn.classList.add('wrong');group[ans].classList.add('correct');}
-    document.getElementById('why-'+qi).classList.add('show');
-    answered++;
-    if(answered===quiz.length){
-      scoreEl.textContent=`You scored ${correct} / ${quiz.length}.`;
-      scoreEl.scrollIntoView({behavior:'smooth',block:'center'});
+  // build sections + pills
+  const pills=document.getElementById('pills');pills.innerHTML="";
+  ch.sections.forEach((s,i)=>{
+    const node=buildSection(s,i);
+    body.appendChild(node);
+    if(s.nav){
+      const p=el(`<button class="pill">${s.nav}</button>`);
+      p.addEventListener('click',()=>document.getElementById("sec-"+i).scrollIntoView({behavior:'smooth',block:'start'}));
+      pills.appendChild(p);
     }
   });
-});
+  body.appendChild(el(`<footer>Built from your WSET L2 pack · <span>${ch.title}</span></footer>`));
 
-document.querySelectorAll('.pill').forEach(p=>{
-  p.addEventListener('click',()=>{
-    document.getElementById(p.dataset.go).scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+  // wire spectrum + region toggles + flips
+  body.querySelectorAll('.stage-bar').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
+  body.querySelectorAll('.region .top').forEach(t=>t.addEventListener('click',()=>t.closest('.region').classList.toggle('open')));
+  body.querySelectorAll('.rung').forEach(r=>r.addEventListener('click',()=>r.classList.toggle('open')));
+  body.querySelectorAll('.flash').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('flip')));
 
-/* gentle reveal */
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const io=new IntersectionObserver((es)=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target);}});
-  },{threshold:.08});
-  document.querySelectorAll('section .card, .stage, .rung, .hook, .flash, .region').forEach(el=>{
-    el.style.opacity=0;el.style.transform='translateY(10px)';el.style.transition='opacity .4s,transform .4s';
-    io.observe(el);
-  });
+  window.scrollTo(0,0);
 }
+
+function goHome(){
+  document.getElementById('chapterView').classList.add('hidden');
+  document.getElementById('home').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+renderHome();
 </script>
 </body>
 </html>
